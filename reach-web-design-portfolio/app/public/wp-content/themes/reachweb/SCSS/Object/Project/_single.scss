@@ -1,0 +1,316 @@
+@use "../../global"as g;
+
+
+.p-single{
+    margin: 180px 36px 120px 36px;
+    font-family: fot-klee-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    color: g.$black;
+    text-align: center;
+
+    @include g.mq(tab){
+        margin: 220px 80px 300px 80px;
+    }
+
+    @include g.mq(tab1){
+        margin: 230px 100px 300px 100px;
+    }
+
+    @include g.mq(pc){
+        margin: 300px 120px 320px 120px;
+    }
+
+    @include g.mq(pc1){
+        margin: 300px 180px 320px 180px;
+    }
+
+    &__title{
+        font-family: "游ゴシック体", YuGothic,"游ゴシック", "Yu Gothic", sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 48px;
+        font-size: 16px;
+        line-height: 1.8em;
+        background: linear-gradient(transparent 80%, g.$title-green 0%);//文字の下線を2行目（複数行）以降にも引く方法
+        display: inline; //文字の下線を2行目（複数行）以降にも引く方法
+        padding-bottom: 5px;
+
+        @include g.mq(tab1){
+            font-size: 18px;
+            margin-bottom:56px;   
+        }
+
+        @include g.mq(pc){
+            font-size: 24px;
+            margin-bottom: 80px;
+        }
+    }
+
+    &--image{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 56px;
+
+        &--raisetech-banner1{
+            display: flex;
+            justify-content: center;
+            margin: 40px 0 60px 0;
+
+            @include g.mq(pc){
+                margin: 100px 0 100px 0;  
+            }
+
+            .raisetech-banner2{
+                @include g.mq(tab){
+                    max-width: 540px;  
+                }
+            }
+
+            .miraini-logo-single{
+                @include g.mq(tab1){
+                    max-width: 650px;  
+                }
+            }
+        }
+    }
+
+    
+
+    &__content{
+
+        display: table;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        max-width:800px;
+
+        &--detail{
+        margin: 32px 0;
+        word-break: break-all;
+        }
+
+        &--raisetech-banner1{
+            display: table;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width:700px;
+        }
+
+        &--raisetech-banner2{
+            display: table;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 540px;
+        }
+
+        &--logo{
+            display: table;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 650px;
+
+        }
+        
+        &--list{
+            
+            &-item{
+                padding-left: 20px;
+                li{
+                    list-style-type: disc;
+                }
+            }
+        }
+        
+        &--comment{
+            margin-top: 32px;
+            &-content{
+                margin: 16px 0 20px 0;          
+            }
+        
+            &-gitlink{
+                margin-top: 16px;
+                >a{
+                    color: g.$black;
+                    word-break: break-all;//urlを折り返す
+                    &:hover{
+                        opacity: 0.7;
+                    }
+                }
+            }         
+
+            &-URL-link{
+                    margin-top: 16px;
+                    >a{
+                        color: g.$black;
+                        word-break: break-all;//urlを折り返す
+                        &:hover{
+                            opacity: 0.7;
+                        }
+                    }               
+                }    
+        }
+    }
+
+    &_en{
+        margin: 180px 36px 120px 36px;
+        font-family: nimbus-sans, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        line-height: 1.8em;
+        text-align: center;
+
+        @include g.mq(tab){
+            margin: 220px 80px 300px 80px;
+        }
+    
+        @include g.mq(tab1){
+            margin: 230px 100px 300px 100px;
+        }
+    
+        @include g.mq(pc){
+            margin: 300px 120px 320px 120px;
+        }
+    
+        @include g.mq(pc1){
+            margin: 300px 180px 320px 180px;
+        }
+
+        &__title{
+            font-family: "游ゴシック体", YuGothic,"游ゴシック", "Yu Gothic", sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 48px;
+            font-size: 16px;
+            line-height: 1.8em;
+            background: linear-gradient(transparent 80%, g.$title-green 0%);//文字の下線を2行目（複数行）以降にも引く方法
+            display: inline; //文字の下線を2行目（複数行）以降にも引く方法
+            padding-bottom: 5px;
+    
+            @include g.mq(tab1){
+                font-size: 18px;
+                margin-bottom:56px;   
+            }
+    
+            @include g.mq(pc){
+                font-size: 24px;
+                margin-bottom: 80px;
+            }
+        }
+    
+        &--image{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 56px;
+    
+            &--raisetech-banner1{
+                display: flex;
+                justify-content: center;
+                margin: 40px 0 60px 0;
+    
+                @include g.mq(pc){
+                    margin: 100px 0 100px 0;  
+                }
+    
+                .raisetech-banner2{
+                    @include g.mq(tab){
+                        max-width: 540px;  
+                    }
+                }
+    
+                .miraini-logo-single{
+                    @include g.mq(tab1){
+                        max-width: 650px;  
+                    }
+                }
+            }
+        }
+    
+        
+    
+        &__content{
+    
+            display: table;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width:800px;
+    
+            &--detail{
+            margin: 32px 0;
+            word-break: break-all;
+            }
+    
+            &--raisetech-banner1{
+                display: table;
+                text-align: left;
+                margin-left: auto;
+                margin-right: auto;
+                max-width:700px;
+            }
+    
+            &--raisetech-banner2{
+                display: table;
+                text-align: left;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 540px;
+            }
+    
+            &--logo{
+                display: table;
+                text-align: left;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 650px;
+    
+            }
+            
+            &--list{
+                
+                &-item{
+                    padding-left: 20px;
+                    li{
+                        list-style-type: disc;
+                    }
+                }
+            }
+            
+            &--comment{
+                margin-top: 32px;
+                &-content{
+                    margin: 16px 0 20px 0;          
+                }
+            
+                &-gitlink{
+                    margin-top: 16px;
+                    >a{
+                        color: g.$black;
+                        word-break: break-all;//urlを折り返す
+                        &:hover{
+                            opacity: 0.7;
+                        }
+                    }
+                }         
+    
+                &-URL-link{
+                    margin-top: 16px;
+                    >a{
+                        color: g.$black;
+                        word-break: break-all;//urlを折り返す
+                            &:hover{
+                                opacity: 0.7;
+                            }
+                    }               
+                }    
+            }
+        }
+    }
+}

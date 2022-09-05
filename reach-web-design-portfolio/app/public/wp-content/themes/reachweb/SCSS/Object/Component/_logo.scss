@@ -1,0 +1,15 @@
+@use "../../global"as g;
+
+.c-logo{
+    width:84px;
+    height: 57px;
+
+    &:hover{
+        opacity:0.7;
+    }
+
+    @include g.mq(tab){
+        width: 123px;
+        height: 84px
+    }
+}

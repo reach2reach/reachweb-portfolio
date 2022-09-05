@@ -1,0 +1,24 @@
+[03-Aug-2022 23:58:32] NOTICE: fpm is running, pid 33426
+[03-Aug-2022 23:58:32] NOTICE: ready to handle connections
+[04-Aug-2022 01:09:13] NOTICE: Terminating ...
+[04-Aug-2022 01:09:13] NOTICE: Terminating ...
+[04-Aug-2022 01:09:13] NOTICE: exiting, bye-bye!
+[04-Aug-2022 17:26:44] NOTICE: fpm is running, pid 4533
+[04-Aug-2022 17:26:44] NOTICE: ready to handle connections
+[04-Aug-2022 18:00:36] WARNING: [pool www] child 4545 said into stderr: "sh: gs: command not found"
+[04-Aug-2022 18:00:38] WARNING: [pool www] child 4545 said into stderr: "sh: gs: command not found"
+[04-Aug-2022 18:01:52] NOTICE: Terminating ...
+[04-Aug-2022 18:01:52] NOTICE: Terminating ...
+[04-Aug-2022 18:01:52] NOTICE: exiting, bye-bye!
+[04-Aug-2022 18:01:58] NOTICE: fpm is running, pid 16911
+[04-Aug-2022 18:01:58] NOTICE: ready to handle connections
+[04-Aug-2022 18:02:14] WARNING: [pool www] child 16943 said into stderr: "sh: gs: command not found"
+[06-Aug-2022 05:47:58] WARNING: [pool www] child 16943 said into stderr: "libpng warning: iCCP: known incorrect sRGB profile"
+[06-Aug-2022 05:50:42] WARNING: [pool www] child 16943 said into stderr: "libpng warning: iCCP: known incorrect sRGB profile"
+[25-Aug-2022 06:46:15] NOTICE: Terminating ...
+[25-Aug-2022 06:46:15] NOTICE: Terminating ...
+[25-Aug-2022 06:46:15] NOTICE: exiting, bye-bye!
+[25-Aug-2022 06:46:39] NOTICE: fpm is running, pid 62742
+[25-Aug-2022 06:46:39] NOTICE: ready to handle connections
+[26-Aug-2022 02:28:38] WARNING: [pool www] child 62747 said into stderr: "sh: gs: command not found"
+[26-Aug-2022 02:28:39] WARNING: [pool www] child 62746 said into stderr: "sh: gs: command not found"

@@ -1,0 +1,309 @@
+@use "../../global"as g;
+
+.p-about{
+
+    &__title--wrapper{
+        text-align: center;
+    }
+
+    &__title{
+    font-family: quicksand, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 24px;
+    color: g.$black;
+    letter-spacing:0.2em;
+    position: relative;
+    opacity: 0;
+    display: inline-block; //下線を文字の幅にあわせるため
+    border-bottom: solid 5px g.$title-green;
+        
+        @include g.mq(tab){
+            font-size: 32px;
+            border-bottom: solid 8px g.$title-green;
+        }
+    
+    }
+
+    &__title.is-show{
+        animation-name: zoomInAnime;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        
+            @keyframes zoomInAnime {
+                0% {
+                    transform: scale(0.3);
+                    opacity: 0;
+                    -webkit-transform: scale(0.3);
+                    -moz-transform: scale(0.3);
+                    -o-transform: scale(0.3);
+                    -ms-transform: scale(0.3);
+                }           
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                    -webkit-transform: scale(1);
+                    -moz-transform: scale(1);
+                    -o-transform: scale(1);
+                }
+            }
+    }
+    
+    &__profile{
+        display: flex;
+        margin-top: 120px;
+        justify-content: center;
+        @include g.mq(tab){
+            margin-top: 160px;
+        }
+        @include g.mq(pc){
+            margin-top: 180px;
+        }
+        &--photo{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            
+            
+            &.is-show{
+                animation-name: fadeIn;
+                animation-duration: 5s;
+                animation-fill-mode: forwards;
+            
+                @keyframes fadeIn {
+                0% { opacity: 0;}
+                100% { opacity: 1;transform: translate(0);}
+                }
+            }
+
+            @include g.mq(tab){
+            width: 230px;
+            height: 230px;
+            }
+
+            @include g.mq(pc){
+            width: 330px;
+            height: 330px;
+            }
+
+            >img{
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+
+        &--hello{
+            width: 150px;
+            height:auto;
+            padding: 50px 0 0 20px;
+
+            @include g.mq(tab){
+                width: 250px;
+                height: auto;
+                padding: 80px 0 0 50px;
+            }
+
+            @include g.mq(pc){
+                width: 350px;
+                height: auto;
+                padding: 90px 0 0 70px;
+            }
+        }
+    }
+
+    &--content{
+        min-width: 300px;
+        max-width: 720px;
+        display: table;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__text{
+        margin: 75px 36px 30px 36px;
+        font-family: fot-klee-pro, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        line-height: 1.8em;
+
+        @include g.mq(tab){
+            margin: 75px 70px 50px 70px;
+        }
+        @include g.mq(tab1){
+            margin: 75px 15% 50px 15%;
+        }
+
+        @include g.mq(pc){
+            margin: 75px 36px 50px 36px;
+        }
+
+        &--skill{
+            margin: 30px 0;
+            width: 303px; //自動改行のためwidth指定
+            word-wrap: break-word;//303px以上になったら改行
+            //cssで2行目以降の文頭を字下げ//
+            padding-left: 2em;
+            text-indent: -2em;
+
+            @include g.mq(tab){
+                width: 440px;
+                word-wrap: break-word;
+            }
+
+            @include g.mq(tab1){
+                width: 800px;
+                word-wrap: break-word;
+            }
+        }
+    }
+
+    &__accordion{
+        margin: 36px 36px 0px 36px;
+
+        @include g.mq(tab){
+            margin: 75px 70px 50px 70px;
+        }
+        @include g.mq(tab1){
+            margin: 75px 15% 50px 15%;
+        }
+
+        @include g.mq(pc){
+            margin: 75px 36px 50px 36px;
+        }
+        
+        &--title{
+            font-family: quicksand, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 16px;
+            color: g.$black;
+            letter-spacing:0.2em;
+            position: relative;
+
+            @include g.mq(pc){
+                font-size: 18px;
+            }
+            &:hover{
+                opacity: 0.7;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 90px;
+                top: 33%;
+                transition: all 0.2s ease-in-out;
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-top: solid 2px g.$black;
+                border-right: solid 2px g.$black;
+                -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+                -moz-transform: rotate(135deg);
+                -o-transform: rotate(135deg);
+            }
+            
+            &.open::after {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                top: 45%;
+                }
+        }
+
+        &--content{
+            display: none;
+            font-family: fot-klee-pro, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+            color: g.$black;
+            line-height: 1.8em;
+            margin-top: 30px;
+        }
+    }
+}
+
+//----------------------
+//English-version
+//----------------------
+
+.p-about{
+
+    &__text_en{
+        margin: 75px 36px 30px 36px;
+        font-family: nimbus-sans, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        line-height: 1.8em;
+    
+        @include g.mq(tab){
+            margin: 75px 70px 50px 70px;
+        }
+        @include g.mq(tab1){
+            margin: 75px 15% 50px 15%;
+        }
+    
+        @include g.mq(pc){
+            margin: 75px 36px 50px 36px;
+        }
+        
+    
+        &--skill{
+            margin: 30px 0;
+            width: 303px; //自動改行のためwidth指定
+            word-wrap: break-word;//303px以上になったら改行
+            //cssで2行目以降の文頭を字下げ//
+            padding-left: 2em;
+            text-indent: -2em;
+    
+            @include g.mq(tab){
+                width: 440px;
+                word-wrap: break-word;
+            }
+    
+            @include g.mq(tab1){
+                width: 800px;
+                word-wrap: break-word;
+            }
+        }
+
+        &--course{
+            //cssで2行目以降の文頭を字下げ//
+            padding-left: 5em;
+            text-indent: -5em;
+        }
+    }
+
+    &__accordion{
+        &--content_en{
+            display: none;
+            font-family: nimbus-sans, sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 16px;
+            color: g.$black;
+            line-height: 1.8em;
+            margin-top: 30px;
+        }
+    }
+}
+
+
+

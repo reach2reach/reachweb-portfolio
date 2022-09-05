@@ -1,0 +1,357 @@
+@use "../../global"as g;
+
+.p-contact{
+    text-align:center;
+
+    &__title{
+        font-family: quicksand, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 24px;
+        color: g.$black;
+        letter-spacing:0.2em;
+        display: inline-block; //下線を文字の幅にあわせるため
+        border-bottom: solid 5px g.$title-green;
+        opacity: 0;
+    
+            @include g.mq(tab){
+                font-size: 32px;
+                border-bottom: solid 8px g.$title-green;
+            }
+        
+        }
+    
+        &__title.is-show{
+            animation-name: zoomInAnime;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            
+                @keyframes zoomInAnime {
+                    0% {
+                        transform: scale(0.3);
+                        opacity: 0;
+                        -webkit-transform: scale(0.3);
+                        -moz-transform: scale(0.3);
+                        -o-transform: scale(0.3);
+                    }           
+                    100% {
+                        opacity: 1;
+                        transform: scale(1);
+                        -webkit-transform: scale(1);
+                        -moz-transform: scale(1);
+                        -o-transform: scale(1);
+                    }
+                }
+        }
+
+    &--content{
+        max-width: 700px;
+        display: table;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    &--text{
+        font-family: fot-klee-pro, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        line-height: 1.8em;
+        text-align: left;
+    }
+
+    &--privacy{
+        font-family: fot-klee-pro, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        line-height: 1.8em;
+        text-align: left;
+        margin-top: 55px;
+
+        @include g.mq(tab1){
+            margin-top: 64px;
+        }
+        @include g.mq(pc){
+            margin-top: 72px;
+        }
+    }
+    
+    &--name{
+        text-align: left;
+        margin-top:64px;
+
+        &-text{
+            font-family: fot-klee-pro, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+            color: g.$black;
+            margin-bottom:7px;
+            
+            span{
+                color: g.$red;
+            }
+        }
+
+        &-box{
+            border: 1px solid g.$contact-box;
+            border-radius: 3px;
+            padding-left: 6px;
+            height: 35px;
+            width: 75%;
+            font-size: 15px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            outline:none;//入力時の枠がブルーになるのを消す
+
+            @include g.mq(tab1){
+                height: 56px;
+                font-size: 16px;
+                padding-left: 10px;
+            }
+
+            @include g.mq(pc){
+                width: 65%;
+            }
+        }
+    }
+
+    &--mail{
+        text-align: left;
+        margin-top:50px;
+        
+        @include g.mq(pc){
+            margin-top: 80px;
+        }
+
+        &-text{
+            font-family: fot-klee-pro, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+            color: g.$black;
+            margin-bottom:7px;
+            
+            span{
+                color: g.$red;
+            }
+        }
+
+        &-box{
+            border: 1px solid g.$contact-box;
+            border-radius: 3px;
+            padding-left: 6px;
+            height: 35px;
+            width: 75%;
+            font-size: 15px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            outline:none;//入力時の枠がブルーになるのを消す
+
+            @include g.mq(tab1){
+                height: 56px;
+                font-size: 16px;
+                padding-left: 10px;
+            }
+
+            @include g.mq(pc){
+                width: 65%;
+            }
+        }
+    }
+
+    &--message{
+        text-align: left;
+        margin-top:50px;
+
+        @include g.mq(pc){
+            margin-top: 80px;
+        }
+
+        &-text{
+            font-family: fot-klee-pro, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+            color: g.$black;
+            margin-bottom:7px;
+            
+            span{
+                color: g.$red;
+            }
+        }
+
+        &-box{
+            border: 1px solid g.$contact-box;
+            border-radius: 3px;
+            padding: 10px;
+            height: 250px;
+            width: 100%;
+            font-size: 15px;
+            resize: none;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            outline:none;//入力時の枠がブルーになるのを消す
+
+            @include g.mq(tab1){
+                height: 420px;
+            }
+
+            @include g.mq(pc){
+                height: 520px;
+            }
+        }
+    }
+    
+    //-----------------------------------
+    // WP-contact-form style
+    //-----------------------------------
+    form.sent p{
+        display:none;
+        }
+    
+    //送信後、OKメッセージの装飾
+    .wpcf7 form.sent .wpcf7-response-output {
+        background-color: #E5F7F6;
+        border: none;
+        color: #488193;
+        font-size: 18px;
+        margin: 0;
+        padding: 1.5em;
+    }
+
+    //送信後、未入力警告の装飾
+    .wpcf7 form.invalid .wpcf7-response-output,
+    .wpcf7 form.unaccepted .wpcf7-response-output {
+        background-color: #F8E5E5;
+        border: none;
+        color: g.$red;
+        margin: 0;
+        padding: 1em;
+    }
+
+    //----------------------------
+    //ENGLISH Version
+    //----------------------------
+
+    #wpcf7-f250-o1 form.sent .wpcf7-response-output {
+        font-family: nimbus-sans, sans-serif;
+        font-size: 16px;
+        font-weight:300;
+    }
+    
+    #wpcf7-f250-o1 .wpcf7-not-valid-tip{
+        font-family: nimbus-sans, sans-serif;
+        font-size: 16px;
+        font-weight:300;
+
+    }
+    #wpcf7-f250-o1 .wpcf7-response-output {
+        font-family: nimbus-sans, sans-serif;
+        font-size: 16px;
+        font-weight:300;
+    }
+
+    &--text_en{
+        font-family: nimbus-sans, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        line-height: 1.8em;
+        text-align: left;
+    }
+
+    &--privacy_en{
+        font-family: nimbus-sans, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        line-height: 1.8em;
+        text-align: left;
+        margin-top: 55px;
+
+        @include g.mq(tab1){
+            margin-top: 64px;
+        }
+        @include g.mq(pc){
+            margin-top: 72px;
+        }
+    }
+
+    &--name-text_en{
+        font-family: nimbus-sans, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        margin-bottom:7px;
+            
+        span{
+            color: g.$red;
+        }
+    }
+
+    &--mail-text_en{
+        font-family: nimbus-sans, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        margin-bottom:7px;
+            
+        span{
+            color: g.$red;
+        }
+    }
+
+    &--message-text_en{
+        font-family: nimbus-sans, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        color: g.$black;
+        margin-bottom:7px;
+            
+        span{
+            color: g.$red;
+        }
+    }
+    //-------------------
+    // Placeholder設定
+    //-------------------
+    //Chrome, Safari //
+    #wpcf7-f250-o1 ::-webkit-input-placeholder{
+        color: g.$contact-box;
+        font-family: nimbus-sans, sans-serif;
+        font-size: 16px;
+        font-weight:300;
+    }   
+
+    //Firefox//
+    #wpcf7-f250-o1 ::-moz-placeholder{
+        color:g.$contact-box;
+        font-family: nimbus-sans, sans-serif;
+        font-size: 16px;
+        font-weight:300;
+    }
+
+    //Firefox 18以前//
+    #wpcf7-f250-o1 :-moz-placeholder{
+        color: g.$contact-box;
+        font-family: nimbus-sans, sans-serif;
+        font-size: 16px;
+        font-weight:300;
+    }
+}

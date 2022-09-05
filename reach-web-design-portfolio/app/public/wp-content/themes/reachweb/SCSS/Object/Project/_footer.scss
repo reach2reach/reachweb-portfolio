@@ -1,0 +1,14 @@
+@use "../../global"as g;
+
+.p-footer__copyright{
+    font-family: quicksand, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    color: g.$black;
+    letter-spacing:0.2em;
+
+    @include g.mq(pc1){
+        font-size: 18px;
+    }
+}

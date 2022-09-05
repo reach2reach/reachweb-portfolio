@@ -1,0 +1,24 @@
+$breakpoints: (
+	"tab": "(min-width: 600px)",
+	"tab1": "(min-width: 768px)",
+	"pc": "(min-width: 1025px)",
+	"pc1": "(min-width: 1280px)",
+);
+
+@mixin mq($breakpoint:tab) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin mq($breakpoint:tab1) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin mq($breakpoint:pc) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}

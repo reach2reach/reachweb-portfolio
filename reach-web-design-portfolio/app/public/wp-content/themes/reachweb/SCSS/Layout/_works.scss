@@ -1,0 +1,14 @@
+@use "../global"as g;
+.l-works{
+    margin-top: 190px;
+    padding-top:80px;
+
+    @include g.mq(tab){
+        margin-top: 230px;
+        padding-top:125px;
+    }
+    @include g.mq(pc){
+        margin-top: 250px;
+        padding-top: 140px;
+    }
+}

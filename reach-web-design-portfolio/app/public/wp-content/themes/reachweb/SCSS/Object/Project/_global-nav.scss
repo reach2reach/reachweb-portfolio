@@ -1,0 +1,75 @@
+@use "../../global"as g;
+
+.p-global-nav{
+    display: none;
+
+    @include g.mq(pc){
+        display: block;
+    }
+
+    &__menu{
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);//Chrome/Safari/ほとんどのiOSブラウザ
+        -moz-transform: translate(-50%, -50%);//firefox
+        -o-transform: translate(-50%, -50%);//opera
+
+        @include g.mq(tab){
+            top: 50%;
+        }
+
+        @include g.mq(pc){
+            width: 40%;
+            height: 100%;
+            top: 0;
+            margin: 110px auto 0px auto;
+            display: flex;
+            justify-content: space-between;
+        
+        }
+
+        #menu-item-40, #menu-item-41, #menu-item-42, #menu-item-43, #menu-item-251, #menu-item-252, #menu-item-253, #menu-item-254{
+            line-height:3;
+            
+                >a{
+                    font-family: quicksand, sans-serif;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-size: 24px;
+                    color: g.$black;
+                    letter-spacing:0.2em;
+
+                    @include g.mq(tab){
+                        font-size: 32px;
+                    }
+
+                    @include g.mq(pc){
+                        font-size: 20px;
+                    }
+                }
+                &:last-child a{
+                    letter-spacing:0.15em;
+                }
+                &:hover{
+                    opacity:0.7;
+                }
+        }    
+    }
+
+    &.is-active{
+        display: block;
+        position: absolute;
+        z-index : 200;
+        top  : 0;
+        left: 0;
+        background: g.$white;
+        text-align: center;
+        width: 100vw;
+        height: 100vh;
+    }       
+}
+

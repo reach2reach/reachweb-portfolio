@@ -1,0 +1,69 @@
+@use "../../global"as g;
+
+.p-slider{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+
+    .image1,.image2,.image3,.image4,.image5{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        animation-iteration-count: infinite; //無限に繰り返す
+        animation-duration: 40s;
+        animation-name: slider;
+        @keyframes slider{
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+            10% {
+                opacity: 1;
+            }
+            15% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+    
+
+    .image1{
+        background-image: url(../Images/mv/mv1.jpg);
+        animation-delay: 0s;
+    }
+        
+    .image2{
+        background-image: url(../Images/mv/mv2.jpg);
+        animation-delay: 8s;
+    }
+
+    .image3{
+        background-image: url(../Images/mv/mv3.jpg);
+        animation-delay: 16s;
+    }
+
+    .image4{
+        background-image: url(../Images/mv/mv4.jpg);
+        animation-delay: 24s;
+    }
+
+    .image5{
+        background-image: url(../Images/mv/mv5.jpg);
+        animation-delay: 32s; 
+    }
+}
+

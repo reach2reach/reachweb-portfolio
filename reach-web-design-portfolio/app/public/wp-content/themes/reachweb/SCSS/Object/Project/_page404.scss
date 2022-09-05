@@ -1,0 +1,65 @@
+@use "../../global"as g;
+
+.p-404page{
+
+    margin: 100px 36px 160px 36px;
+    text-align:center;
+    font-family: fot-klee-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    color: g.$black;
+    line-height: 1.8em;
+
+    @include g.mq(tab){
+        margin: 150px 80px 200px 80px;
+    }
+
+    @include g.mq(tab1){
+        margin: 150px 140px 250px 140px;
+    }
+
+    @include g.mq(pc){
+        margin: 200px 180px 300px 180px;
+    }
+
+        &__title{
+            padding-top:64px;
+            h2{
+                font-size: 40px;
+                font-family: quicksand, sans-serif;
+                font-weight: 700;
+                letter-spacing:0.2em;
+                background: linear-gradient(transparent 90%, g.$title-green 0%);//文字の下線を2行目（複数行）以降にも引く方法
+                display: inline; //文字の下線を2行目（複数行）以降にも引く方法
+                line-height:1.2em;
+            }
+
+            &--text{
+                font-size: 24px;
+                font-family: quicksand, sans-serif;
+                font-weight: 400;
+                letter-spacing:0;
+            }
+        }
+
+        &__content{
+            padding-top:80px;
+
+            &--home{
+                padding-top:32px;
+            }
+        }
+
+        &__content_en{
+            padding-top:80px;
+            font-family: nimbus-sans, sans-serif;;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 16px;
+
+            &--home{
+                padding-top:32px;
+            }
+        }
+}

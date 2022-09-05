@@ -1,0 +1,17 @@
+@use "../global"as g;
+
+.l-container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 70px;
+
+    @include g.mq(tab1){
+        padding-bottom: 105px;
+    }
+
+    @include g.mq(pc1){
+        padding-bottom: 160px;
+    }
+}
+

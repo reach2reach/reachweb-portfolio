@@ -1,0 +1,57 @@
+@use "../../global"as g;
+
+.p-mv{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+
+    &__cp{
+        position: absolute;
+        left: 43px;
+        bottom: 117px;
+        z-index: 2;
+
+        @include g.mq(tab){
+            left: 137px;
+            bottom: 88px
+        }
+        @include g.mq(pc){
+            left: 223px;
+            bottom: 90px
+        }
+
+        h3{
+            font-family: quicksand, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 18px;
+            color: g.$white;
+            line-height: 2;
+            letter-spacing:0.2em;
+
+            @include g.mq(tab){
+                font-size: 24px;
+            }
+        }
+    }
+
+    p{
+        font-family: braisetto, script;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        color: g.$white;
+        position: absolute;
+        right: 20px;
+        bottom: 8px;
+        z-index: 2;
+
+        @include g.mq(tab){
+            font-size: 20px;
+        }
+        @include g.mq(pc){
+            font-size: 24px;
+        }
+    }
+}

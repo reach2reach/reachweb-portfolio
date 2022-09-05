@@ -1,0 +1,24 @@
+@use "../global"as g;
+
+.l-header{
+    height: 80px;
+    width: 100%;
+    top: 0;
+    background-color: g.$white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 14px 30px 9px 30px;
+    position: fixed;
+    z-index: 100;
+    
+    @include g.mq(tab){
+        height: 125px;
+        padding: 20px 54px 20px 80px;
+    }
+
+    @include g.mq(pc){
+        height: 108px;
+        padding: 14px 54px 10px 80px;
+    }
+}

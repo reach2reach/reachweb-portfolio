@@ -1,0 +1,331 @@
+@use "../../global"as g;
+
+.p-miraini-web{
+    font-family: fot-klee-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    color: g.$black;
+
+    &__title{
+        font-family: "游ゴシック体", YuGothic,"游ゴシック", "Yu Gothic", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-align: center;
+
+        @include g.mq(tab1){
+            font-size: 18px;
+        }
+
+        @include g.mq(pc){
+            font-size: 24px;
+        }
+
+        &-newline{
+            @include g.mq(tab1){
+                display: none;
+            }
+        }
+    }
+
+    &__image{
+
+        margin-top:72px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 56px;
+        column-gap: 10px;
+        
+        @include g.mq(tab){
+            column-gap: 16px;
+            row-gap: 64px;          
+        }
+
+        @include g.mq(tab1){
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            row-gap: 64px;
+            column-gap: 16px;
+            margin-top:104px;          
+        }
+
+        @include g.mq(pc1){
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            column-gap: 20px;
+            margin-top:144px;          
+        }
+
+        &--item{
+            position: relative;
+
+            & a:after {
+                position: absolute;
+                white-space: pre-wrap; //content内にスペースを作る
+                content:'click \0bb';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(#000,.5);
+                font-family:"游ゴシック体", YuGothic,"游ゴシック", "Yu Gothic", sans-serif ;
+                font-size: 20px;
+                letter-spacing: 0.1em;
+                color: g.$white;                
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                opacity: 0;
+            }
+            
+            & a:hover:after {
+                opacity: 1;
+            } 
+        }
+    }
+
+    &__content{
+        margin-top:88px;
+        display: table;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        max-width:900px;
+
+        @include g.mq(tab1){
+            margin-top:152px;
+        }
+    
+        &--detail{
+        margin: 32px 0;
+        }
+        
+
+        &--list{
+            
+            &-item{
+                padding-left: 20px;
+                li{
+                    list-style-type: disc;
+                }
+            }
+        }
+        
+        &--comment{
+            margin-top: 32px;
+            &-content{
+                margin: 16px 0 20px 0;          
+            }
+        
+            &-link-url{
+                margin-top: 16px;
+                >a{
+                    color: g.$black;
+                    word-break: break-all;//urlを折り返す
+                    &:hover{
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+    }
+
+//----------------------------------------------------------------
+//English
+//----------------------------------------------------------------
+    &_en{
+        font-family: nimbus-sans, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 1.6;
+        color: g.$black;
+
+        &__title{
+            font-family: "游ゴシック体", YuGothic,"游ゴシック", "Yu Gothic", sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-align: center;
+    
+            @include g.mq(tab1){
+                font-size: 18px;
+            }
+    
+            @include g.mq(pc){
+                font-size: 24px;
+            }
+    
+            &-newline{
+                @include g.mq(tab1){
+                    display: none;
+                }
+            }
+        }
+    
+        &__image{
+    
+            margin-top:72px;
+    
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 56px;
+            column-gap: 10px;
+            
+            @include g.mq(tab){
+                column-gap: 16px;
+                row-gap: 64px;          
+            }
+    
+            @include g.mq(tab1){
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                row-gap: 64px;
+                column-gap: 16px;
+                margin-top:104px;          
+            }
+    
+            @include g.mq(pc1){
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                column-gap: 20px;
+                margin-top:144px;          
+            }
+    
+            &--item{
+                position: relative;
+    
+                & a:after {
+                    position: absolute;
+                    white-space: pre-wrap; //content内にスペースを作る
+                    content:'click \0bb';
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(#000,.5);
+                    font-family:"游ゴシック体", YuGothic,"游ゴシック", "Yu Gothic", sans-serif ;
+                    font-size: 20px;
+                    letter-spacing: 0.1em;
+                    color: g.$white;                
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    opacity: 0;
+                }
+                
+                & a:hover:after {
+                    opacity: 1;
+                } 
+            }
+        }
+    
+        &__content{
+            margin-top:88px;
+            display: table;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width:900px;
+    
+            @include g.mq(tab1){
+                margin-top:152px;
+            }
+        
+            &--detail{
+            margin: 32px 0;
+            }
+            
+    
+            &--list{
+                
+                &-item{
+                    padding-left: 20px;
+                    li{
+                        list-style-type: disc;
+                    }
+                }
+            }
+            
+            &--comment{
+                margin-top: 32px;
+                &-content{
+                    margin: 16px 0 20px 0;          
+                }
+            
+                &-link-url{
+                    margin-top: 16px;
+                    >a{
+                        color: g.$black;
+                        word-break: break-all;//urlを折り返す
+                        &:hover{
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Modal window//
+.p-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 200;
+    
+    &-bg {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(60, 60, 60, 0.7);
+        z-index: 201;
+    }
+
+    &-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        max-width: 800px;
+        z-index: 202;
+    }
+
+    &-inner {
+        position: relative;
+        width: 100%;
+        min-height: 100px;
+        max-height: 80vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        justify-content: center;
+
+        >img{
+            height: 100%;
+        }
+    }
+    
+    &--close-btn {
+        display: block;
+        position: absolute;
+        top: -50px;
+        right: -10%;
+        color: g.$white;
+        font-size: 40px;
+        z-index: 203;
+
+        @include g.mq(tab){
+            font-size: 60px;
+            top: -75px;
+        }
+
+        @include g.mq(tab1){
+            font-size: 80px;
+            top: -100px;
+        }
+    }
+}
+

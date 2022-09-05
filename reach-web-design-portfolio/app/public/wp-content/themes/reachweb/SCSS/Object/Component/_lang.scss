@@ -1,0 +1,51 @@
+@use "../../global"as g;
+
+.bogo-language-switcher { 
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    & .ja{
+        position: relative;
+        margin-right: 15px;
+        order: 0; //言語ボタンの表示順（0が最初）
+    
+        &::after{
+            content:"";
+            position: absolute;
+            background-color: g.$black;
+            width: 1px;
+            height: 10px;
+            margin: 8px 0px 5px 8px;
+
+            @include g.mq(tab){
+                margin: 7px 0px 7px 8px;
+                height: 14px;
+            }
+        }
+    }
+
+    & .en{
+        order: 1;
+    }
+}
+
+.bogo-language-name a{
+    font-family: quicksand, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    color: g.$black;
+
+    @include g.mq(tab){
+        font-size: 16px;
+    }
+
+    //選択中言語切り替えボタンのスタイル//
+    &.current{
+        border-bottom: solid 1px g.$black;
+    }
+    &:hover{
+        opacity: 0.7;
+    }
+}
